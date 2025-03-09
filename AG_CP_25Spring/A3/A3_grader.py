@@ -180,6 +180,6 @@ def main():
         if os.path.isfile(filepath):  # Ensures it's a file, not a directory
             check_it_out(filepath)"
     """
-    check_it_out("A3/stu_submissions/rodrigues_izabella_3a.py")
+    check_it_out("A3/stu_submissions/file_name.py")
 
 main()
