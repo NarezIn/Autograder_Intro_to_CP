@@ -1,0 +1,82 @@
+"""
+I use the ✅ character to record if I have graded this file on the grading web.
+Make sure you delete/mask all information of students before you upload them somewhere.
+I use **** to mask.
+"""
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Error running this file. Could not complete testing.
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6A.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6.a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Input: my var
+has an incorrect output. Please Check.
+Input: my-var
+has an incorrect output. Please Check.
+Failed 2 Tests.
+
+A6\stu_submissions\****_6a.py:✅
+Input: my var
+has an incorrect output. Please Check.
+Input: my-var
+has an incorrect output. Please Check.
+Failed 2 Tests.
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+
+A6\stu_submissions\****_6a.py:✅
+Passed All Test Cases!
+

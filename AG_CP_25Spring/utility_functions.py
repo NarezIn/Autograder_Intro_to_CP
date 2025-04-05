@@ -42,5 +42,7 @@ def check_illegal_function(code_content): #Upgrade it if possible?
         return "Incorporates cunstom function(s) which is prohibited to use in this assignment. Graders please check it manually to confirm."
     
 
-def test():
+if __name__ == "__main__":
+    #this line means that the following code would be executed only if we run this file
+    #following code would not be executed if this file is imported.
     late_submission("A3/stu_submissions/Richard_Park_3a.py")
