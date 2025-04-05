@@ -26,7 +26,7 @@ This is the autograder for assignments in the course Introduction to Computer Pr
         1. It would be better if every grader has the same grading criteria, because it would be fairer to all students.
         2. Add more maybe, if applicable.########//////
 
-Folder Structure: (fix this later)
+Directory Structure: (fix this later)
 autograder_intro_to_cp
     │──.venv (not sure if I need this)
     │
@@ -43,5 +43,8 @@ autograder_intro_to_cp
         │       
         │
         └──README.md
-
-Folder structure generater?
+        
+Some Notes that I don't know hwo to organize:
+1. In Grade_Comments.txt of each assignment, I use the ✅ character to record if I have graded this file on the grading web. I use **** to mask.
+3. Make sure you delete/mask all information of students before you upload them somewhere.
+4. Make a directory structure generater?
