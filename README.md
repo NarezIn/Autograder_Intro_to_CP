@@ -43,7 +43,9 @@ autograder_intro_to_cp
         │       
         │
         └──README.md
-        
+
+Python modules used: sys, os, subprocess.
+
 Some Notes that I don't know hwo to organize:
 1. In Grade_Comments.txt of each assignment, I use the ✅ character to record if I have graded this file on the grading web. I use **** to mask.
 3. Make sure you delete/mask all information of students before you upload them somewhere.
