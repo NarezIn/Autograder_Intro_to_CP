@@ -37,6 +37,7 @@ def check_illegal_function(code_content): #Upgrade it if possible?
     """
     Check if this file incorporates cunstom functions by looking if there is "def" in the code.
     """
+    #Use python's "ast" module would be a reliable update.
     if "def" in code_content:
         return "Incorporates cunstom function(s) which is prohibited to use in this assignment. Graders please check it manually to confirm."
     

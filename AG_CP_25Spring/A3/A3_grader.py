@@ -140,10 +140,8 @@ def test_case_2(file_path):
 
 def check_it_out(file_path):
     #file_path = os.path.join("A3\stu_submissions", file_name)#delete later if ok
-    """
     comment = open("Grade_Comments.txt", "a")
     comment.write(file_path + ":" + "\n")
-    """
     #Check if the filepath exists. If so, read the code and get the output.
     if not os.path.exists(file_path):
         print(f"Error: File '{file_path}' not found!")
@@ -158,7 +156,6 @@ def check_it_out(file_path):
             pass1 = test_case_1(file_path)
             pass2 = test_case_2(file_path)
             #If this student passes the test case or not, write the info in the comment file.
-            """
             if pass1:
                 comment.write("Test Case 1: Passed\n")
             else:
@@ -166,20 +163,17 @@ def check_it_out(file_path):
             if pass2:
                 comment.write("Test Case 2: Passed\n")
             else:
-                comment.write("Test Case 2: Not Passed. Please Take a look.\n")"
-            """
+                comment.write("Test Case 2: Not Passed. Please Take a look.\n")
         except subprocess.CalledProcessError as e:
             print("Error:\n", e.stderr)  #Print errors if the script fail.
             print("It means either this autograder fails or the grader needs to manually grade this student's submission.")
-        """comment.close()#close the file"""
+        comment.close()#close the file
 
 def main():
-    """
     for filename in os.listdir("A3/stu_submissions"):
         filepath = os.path.join("A3/stu_submissions", filename)
         if os.path.isfile(filepath):  # Ensures it's a file, not a directory
-            check_it_out(filepath)"
-    """
-    check_it_out("A3/stu_submissions/file_name.py")
+            check_it_out(filepath)
+    #check_it_out("A3/stu_submissions/file_name.py")
 
 main()
