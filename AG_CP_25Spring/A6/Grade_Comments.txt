@@ -80,3 +80,96 @@ Passed All Test Cases!
 A6\stu_submissions\****_6a.py:✅
 Passed All Test Cases!
 
+---------------------------------------------------------------------------------------------
+A6\stu_submissions\****.py:✅
+Test Case 1: Not Passed. Please Check.
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Not Passed. Please Check.
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Not Passed. Please Check.
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
+A6\stu_submissions\****.py:✅
+Test Case 1: Passed!
+Test Case 2: Passed!
+
