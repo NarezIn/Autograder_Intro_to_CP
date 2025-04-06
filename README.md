@@ -29,7 +29,7 @@ They are just my empirical rules that can apply to grading all assignments.
 4. I personally hate students who used generative AI to write the code without even trying to understand the code. Sometimes it is hard to tell and make the conviction, but I would deduct more points on assignments that I suspect incorporating code written by AI. Usually, if a student still uses concepts (custom functions, etc.) that are prohibited in the next assignment after I warned this student to not to use them in the grading comment of this assignment, I would suspect that this student used AI to write the code as they might be more willing to get deductions rather than really putting effort to think and write the code on their own. So I always grant their wishes.
 *5. I haven't found any students plagarized others' work. Maybe this autograder program can be a little help to better detect plagarism.
 
-#### Discovered Issues, Solutions, and Notes:
+## Discovered Issues, Solutions, and Notes:
 About this Autograder:
     1. Grading Rubric for each assignment is not settled and depends on the specific assignment. You can also make nuances about the number of points you want to deduct.
         Solution: Learn about stdout and utilize it: A program's output would be generated to the stdout stream in default, so we can just redirec the output to a specific file instead of the stdout steam.
