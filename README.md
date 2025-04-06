@@ -1,20 +1,27 @@
-This is the autograder for assignments in the course Introduction to Computer Programming, CSCI-UA 2, with Prof. Joshua Clayton as the Instructor. If you are a grader and you would like to use this program to help you grade, please know that assignments may differ from semester to semester. Feel free to make adjustments according to the current assignment instructions.
+# Autograder for CSCI-UA 2 – *Introduction to Computer Programming*
 
-#### Author: Zeran Ni (Simon)
-    His Words:
-        Hi! I was a student in Prof. Clayton's section of Introduction to Computer Programming in 2023 Fall. 
-        I became a tutor for this course from 2024 Spring until now (2024 Fall), 
-        and took the role of grader for Prof. Clayton in 2024 Fall. 
-        I found tutor is a more interesting postition compared to grader as tutors can interact with students and instructors, 
-        where as grader is more like a "office job" that you just do it while sitting for hours. 
-        On Nov. 25, 2024, I asked Prof. Clayton that why this class does not use Gradescope to grade students' assignments, 
-        and he said that Gradescope depends on functions calls, which would not be covered at the later part of this course. 
-        I guess this is the obstacle that I should conquer in this automated grader program. With me luck.
+This is the autograder for assignments in the course **CSCI-UA 2: Introduction to Computer Programming**, with Prof. Joshua Clayton as the Instructor. 
 
-#### Course Info:
-    Course Name: CSCI-UA.0002-011
-    Semester: 2024 Fall
-    Instructor: Prof. Joshua Clayton
+> ⚠️ If you are a grader intending to use this program, please be aware that assignments may differ from semester to semester. Feel free to make adjustments based on current assignment instructions.
+
+---
+## Author: **Zeran Ni (Simon)**
+    > Hi! I was a student in Prof. Clayton's section of *Introduction to Computer Programming* in **Fall 2023**.  
+    > I’ve been a tutor for the course since **Spring 2024**, and I’m now also a grader as of **Fall 2024**.  
+    >  
+    > Personally, I find tutoring more engaging than grading — tutors get to interact with students and instructors,  
+    > whereas grading feels more like an "office job" where you're just sitting and processing work for hours.  
+    >  
+    > On **Nov. 25, 2024**, I asked Prof. Clayton why this class doesn't use Gradescope.  
+    > He explained that Gradescope depends on function calls, which aren’t covered in the later parts of this course.  
+    >  
+    > I guess that’s the obstacle I hope to conquer with this autograder. Wish me luck. 🚀
+---
+
+## Course Info:
+    - **Course Name:** CSCI-UA.0002-011  
+    - **Semester:** Fall 2024  
+    - **Instructor:** Prof. Joshua Clayton  
 
 #### General Grading rules:
     They are just my empirical rules that can apply to grading all assignments.
