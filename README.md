@@ -1,6 +1,6 @@
 # Autograder for CSCI-UA 2 – *Introduction to Computer Programming*
-    > This is the autograder for assignments in the course **CSCI-UA 2: Introduction to Computer Programming**, with Prof. Joshua Clayton as the Instructor. 
-    > If you are a grader intending to use this program, please be aware that assignments may differ from semester to semester. Feel free to make adjustments based on current assignment instructions.
+> This is the autograder for assignments in the course **CSCI-UA 2: Introduction to Computer Programming**, with Prof. Joshua Clayton as the Instructor. 
+> If you are a grader intending to use this program, please be aware that assignments may differ from semester to semester. Feel free to make adjustments based on current assignment instructions.
 
 ---
 ## Author: **Zeran Ni (Simon)**
