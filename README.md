@@ -2,7 +2,13 @@ This is the autograder for assignments in the course Introduction to Computer Pr
 
 #### Author: Zeran Ni (Simon)
     His Words:
-        Hi! I was a student in Prof. Clayton's section of Introduction to Computer Programming in 2023 Fall. I became a tutor for this course from 2024 Spring until now (2024 Fall), and took the role of grader for Prof. Clayton in 2024 Fall. I found tutor is a more interesting postition compared to grader as tutors can interact with students and instructors, where as grader is more like a "office job" that you just do it while sitting for hours. On Nov. 25, 2024, I asked Prof. Clayton that why this class does not use Gradescope to grade students' assignments, and he said that Gradescope depends on functions calls, which would not be covered at the later part of this course. I guess this is the obstacle that I should conquer in this automated grader program. With me luck.
+        Hi! I was a student in Prof. Clayton's section of Introduction to Computer Programming in 2023 Fall. 
+        I became a tutor for this course from 2024 Spring until now (2024 Fall), and took the role of grader for Prof. Clayton in 2024 Fall. 
+        I found tutor is a more interesting postition compared to grader as tutors can interact with students and instructors, 
+        where as grader is more like a "office job" that you just do it while sitting for hours. 
+        On Nov. 25, 2024, I asked Prof. Clayton that why this class does not use Gradescope to grade students' assignments, 
+        and he said that Gradescope depends on functions calls, which would not be covered at the later part of this course. 
+        I guess this is the obstacle that I should conquer in this automated grader program. With me luck.
 
 #### Course Info:
     Course Name: CSCI-UA.0002-011
