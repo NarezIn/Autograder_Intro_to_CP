@@ -17,8 +17,8 @@
 ---
 
 ## Course Info:
-- **Course Name:** CSCI-UA.0002-011  
-- **Semester:** Fall 2024  
+- **Course Name:** CSCI-UA.0002
+- **Semester:** Fall 2024, Spring 2025
 - **Instructor:** Prof. Joshua Clayton  
 
 ## General Grading rules:
