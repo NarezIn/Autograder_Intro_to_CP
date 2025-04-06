@@ -1,8 +1,6 @@
 # Autograder for CSCI-UA 2 – *Introduction to Computer Programming*
-
-This is the autograder for assignments in the course **CSCI-UA 2: Introduction to Computer Programming**, with Prof. Joshua Clayton as the Instructor. 
-
-> If you are a grader intending to use this program, please be aware that assignments may differ from semester to semester. Feel free to make adjustments based on current assignment instructions.
+    > This is the autograder for assignments in the course **CSCI-UA 2: Introduction to Computer Programming**, with Prof. Joshua Clayton as the Instructor. 
+    > If you are a grader intending to use this program, please be aware that assignments may differ from semester to semester. Feel free to make adjustments based on current assignment instructions.
 
 ---
 ## Author: **Zeran Ni (Simon)**
@@ -23,7 +21,7 @@ This is the autograder for assignments in the course **CSCI-UA 2: Introduction t
     - **Semester:** Fall 2024  
     - **Instructor:** Prof. Joshua Clayton  
 
-#### General Grading rules:
+## General Grading rules:
     They are just my empirical rules that can apply to grading all assignments.
     1. About Late Submission: For each class period that the homework is late, 10% of the grade will be deducted. For example, if the homework is due on this Monday, but the student make their submission next Tuesday, 30% percent of the grade of this assignment should be deducted, as this submission is late for three periods of class.
     2. If the student's program incorporates python concepts that are clearly prohibited in the instructions, deduct 1 point of the grade for the the specific part of the assignment. If that part of the assignment already worths very little, make the deduction less based on your own judgment.
