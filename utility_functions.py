@@ -1,7 +1,7 @@
 import os
 from datetime import datetime
 
-def read_code(filepath):
+def readReturn(filepath):
     """
     Input: the filepath to the file.
     Return the exact code of this student's code file.
