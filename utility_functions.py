@@ -25,7 +25,8 @@ def late_submission(filepath):#work on this later.
     late_num = 1
     return late_num
 
-def check_illegal_forloop(code_content): #Upgrade it if possible?
+#Should be archived. Give ChatGPT rubrice and use it to check if the student used illegal things.
+def check_illegal_forloop(code_content):
     """
     Check if this file incorporates for loop by looking if there is "for" in the code.
     """
@@ -33,7 +34,8 @@ def check_illegal_forloop(code_content): #Upgrade it if possible?
     if "for(" in code_content:
         return "Incorporates for loop which is prohibited to use in this assignment. Graders please check it manually to confirm."
     
-def check_illegal_function(code_content): #Upgrade it if possible?
+#Should be archived for same reason as above.
+def check_illegal_function(code_content):
     """
     Check if this file incorporates cunstom functions by looking if there is "def" in the code.
     """
@@ -42,7 +44,30 @@ def check_illegal_function(code_content): #Upgrade it if possible?
         return "Incorporates cunstom function(s) which is prohibited to use in this assignment. Graders please check it manually to confirm."
     
 
-if __name__ == "__main__":
-    #this line means that the following code would be executed only if we run this file
-    #following code would not be executed if this file is imported.
-    late_submission("A3/stu_submissions/Richard_Park_3a.py")
+# if __name__ == "__main__":
+#     #this line means that the following code would be executed only if we run this file
+#     #following code would not be executed if this file is imported.
+#     late_submission("A3/stu_submissions/Richard_Park_3a.py")
+
+# The following functions are created after introducing langchain and ChatGPT AP
+def create_student_bundle(prompt_template, stu_code, stu_out, rubric, grade_comment_template):
+    """
+    By passing in the prompt_template,
+    create a bundle of student code, output, and rubric to be sent to the chat model.
+    """
+    return {
+        "messages": prompt_template.format_messages(
+            student_code=stu_code,
+            student_output=stu_out,
+            rubric=rubric,
+            grade_comment_template=grade_comment_template
+        )
+    }
+
+def get_submission_dir(hw_name):
+    """
+    Receives the name of the directory where all students submissions are,
+    and return the absolute path to that directory.
+    """
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this script
+    return os.path.join(BASE_DIR, "stu_submissions", hw_name)
