@@ -5,6 +5,10 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 
+# Get the parent directory of the current file, to import utility_functions module
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+import utility_functions as uf
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -24,32 +28,11 @@ but if the rubric doesn't have related information, simply label "Need Human Che
 """
 
 prompt_template = ChatPromptTemplate.from_template(template_string)
-# print(prompt_template.messages[0].prompt.input_variables)#delete later
-# print(prompt_template.messages[0].prompt)#delete later
-
-def create_student_bundle(stu_code, stu_out, rubric, grade_comment_template):
-    """
-    create a bundle of student code, output, and rubric to be sent to the chat model.
-    """
-    return prompt_template.format_messages(
-        student_code = stu_code, #read student code somewhere else as a string
-        student_output = stu_out, #do subprocesss run somewhere else
-        rubric = rubric, #read rubric somewhere else as a string
-        grade_comment_template = grade_comment_template
-    )
-
-# def grade():
-#     student_grade_comment = chat(student_bundle)
-#     print(student_grade_comment)
 
 # consider put this in the utility_functions
 def get_submission_dir(hw_name):
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this script
     return os.path.join(BASE_DIR, "stu_submissions", hw_name)
-
-def readReturn(filepath):
-    with open(filepath, "r", encoding="utf-8") as file:
-        return file.read()
 
 def getOutErr(filepath):
     result = subprocess.run([sys.executable, filepath], capture_output=True, text=True)
@@ -67,15 +50,19 @@ def grade():
     # print("Looking for:", target_dir)
     # print("Exists?", os.path.exists(target_dir))
     # print("Is dir?", os.path.isdir(target_dir))
-    rubric = readReturn(os.path.abspath("A1/rubrics/A1a_rubric.txt"))
-    grade_comment_template = readReturn(os.path.abspath("A1/grade_comment_template.txt"))
+    counter = 0
+    rubric = uf.readReturn(os.path.abspath("A1/rubrics/A1a_rubric.txt"))
+    grade_comment_template = uf.readReturn(os.path.abspath("A1/grade_comment_template.txt"))
     for filename in sorted(os.listdir(target_dir), key=str.lower):
         filepath = os.path.join(target_dir, filename)
+        counter += 1
         if os.path.isfile(filepath):  # Ensures it's a file, not a directory
             [stu_out, stu_err] = getOutErr(filepath)
-            stu_code = readReturn(os.path.abspath(filepath))
-            student_bundle = create_student_bundle(stu_code, stu_out + "\n" + stu_err, rubric, grade_comment_template)
+            stu_code = uf.readReturn(os.path.abspath(filepath))
+            student_bundle = uf.create_student_bundle(prompt_template, stu_code, stu_out + "\n" + stu_err, rubric, grade_comment_template)
             student_grade_comment = chat(student_bundle)
             writeInComments(filename, student_grade_comment.content)
+        if counter >= 2:  #for debugging
+            break
 
 grade()
