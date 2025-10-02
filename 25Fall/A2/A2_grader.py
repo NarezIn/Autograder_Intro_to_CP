@@ -1,3 +1,7 @@
+import shutil
+#learn about this before A3.
+#haven't modify this file for A2 yet.
+
 import os
 import subprocess
 import sys
@@ -46,9 +50,9 @@ def uses_format_or_fstring(stu_code):
 def grade(n_limit = None):
     print("Running...")
     count = 0
-    target_dir = uf.get_submission_dir("26Fall", "HW2c")
-    rubric = uf.readReturn(os.path.abspath("A2/rubrics/A2c_rubric.txt"))
-    grade_comment_template = uf.readReturn(os.path.abspath("A2/grade_comment_template.txt"))
+    target_dir = uf.get_submission_dir("25Fall", "HW1c")
+    rubric = uf.readReturn(os.path.abspath("A1/rubrics/A1c_rubric.txt"))
+    grade_comment_template = uf.readReturn(os.path.abspath("A1/grade_comment_template.txt"))
     for filename in sorted(os.listdir(target_dir), key=str.lower):
         filepath = os.path.join(target_dir, filename)
         count += 1

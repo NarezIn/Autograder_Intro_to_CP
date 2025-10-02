@@ -3,8 +3,9 @@
 #ignore 'notes': which is my playgrounld folder for testing things
 **/notes/
 #ignore any folder in student_submissions: can't upload students' code to github lol.
-/26Fall/A*/stu_submissions/*/
+/*/A*/stu_submissions/*/
 #do the same for rubrics
-/26Fall/A*/rubrics/*
-/26Fall/mapped_grade_comments.txt
+/*/A*/rubrics/*
+/*/mapped_grade_comments.txt
 #maybe ingore grade_comment_template.txt???
+__pycache__/
