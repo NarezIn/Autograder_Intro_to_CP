@@ -64,10 +64,10 @@ def create_student_bundle(prompt_template, stu_code, stu_out, rubric, grade_comm
         )
     }
 
-def get_submission_dir(hw_name):
+def get_submission_dir(semester, hw_name):
     """
     Receives the name of the directory where all students submissions are,
     and return the absolute path to that directory.
     """
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this script
-    return os.path.join(BASE_DIR, "stu_submissions", hw_name)
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this uf
+    return os.path.join(BASE_DIR, semester, "stu_submissions", hw_name)

@@ -1,0 +1,3 @@
+Completed :) or Incompleted :<
+#There won't be any deduction for this assignment because it's marked completed/incompleted.
+Witty, encouraging, one short sentence comment on student's code / output, like this structure: {adjective}. {key_point that don't have to be a full sentence}!

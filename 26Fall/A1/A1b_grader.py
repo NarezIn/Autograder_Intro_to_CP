@@ -1,15 +1,20 @@
 import os
+import re
 import subprocess
-import sys
+import sys #not sure if I need this
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
+
+# Get the parent directory of the current file, to import utility_functions module
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../..")))
+import utility_functions as uf
 
 # Load environment variables from .env file
 load_dotenv()
 
 chat = ChatOpenAI(
-    model="gpt-4o-mini", 
+    model="gpt-5", 
     temperature=0.0,
     openai_api_key = os.getenv("OPENAI_API_KEY")
 )
@@ -17,24 +22,11 @@ chat = ChatOpenAI(
 template_string = """You are a code grader. \
 You will be given student's code submission ```{student_code}``` \
 and its output ```{student_output}```, and the rubric of that assignment ```{rubric}```. \
-Strictly based on ```{rubric}``` your task is to give a 'grading comment' to each student based on the ```{grade_comment_template}```.\
-For each student's grading comment, you need to give a grade after checking their ```{student_code}``` and ```{student_output}```.
-For every deduction, you need to have a reason, and this reason must be based on the rubric, \
-but if the rubric doesn't have related information, simply label "Need Human Check" after the deduction.\
-"""
+Only follow the rubric for deductions. \
+If the rubric does not cover something, output "Need Human Check!" explicitly.\
+Format the grading comment according to ```{grade_comment_template}``` only."""
 
 prompt_template = ChatPromptTemplate.from_template(template_string)
-
-def create_student_bundle(stu_code, stu_out, rubric, grade_comment_template):
-    """
-    create a bundle of student code, output, and rubric to be sent to the chat model.
-    """
-    return prompt_template.format_messages(
-        student_code = stu_code, #read student code somewhere else as a string
-        student_output = stu_out, #do subprocesss run somewhere else
-        rubric = rubric, #read rubric somewhere else as a string
-        grade_comment_template = grade_comment_template
-    )
 
 # consider put this in the utility_functions
 def get_submission_dir(hw_name):
@@ -45,8 +37,8 @@ def readReturn(filepath):
     with open(filepath, "r", encoding="utf-8") as file:
         return file.read()
 
-def getOutErr(filepath):
-    result = subprocess.run([sys.executable, filepath], input="Lily\nLily\nLily\nLily\nLily\nLily\nLily\nLily\nLily\nLily\n", capture_output=True, text=True, timeout=5)
+def getOutErr(filepath, mock_inputs, timeout=5):
+    result = subprocess.run([sys.executable, filepath], input=mock_inputs, capture_output=True, text=True, timeout=timeout)
     return [result.stdout, result.stderr]
 
 def writeInComments(filepath, student_grade_comment):
@@ -55,20 +47,59 @@ def writeInComments(filepath, student_grade_comment):
     comment.write(student_grade_comment + "\n" + "\n")
     comment.close()
 
-def grade():
-    count = 0
-    target_dir = get_submission_dir("HW1b")
-    rubric = readReturn(os.path.abspath("A1/rubrics/A1b_rubric.txt"))
-    grade_comment_template = readReturn(os.path.abspath("A1/grade_comment_template.txt"))
+def extract_table_values(stu_out):
+    """
+    Extracts numerical values from the student's output table.
+    Returns a list of rows, where each row is [Starting Balance, Interest, Ending Balance].
+    If any error occurs during extraction, returns False.
+    """
+    try:
+        lines = stu_out.splitlines()
+        # keep only lines that look like table rows (start with a month number)
+        table_lines = [ln for ln in lines if re.match(r"\s*\d+\s", ln)]
+        table = []
+        for line in table_lines:
+            # capture numbers with optional commas + decimals
+            nums = re.findall(r"[\d,]+\.\d+", line)
+            # convert "1,000.00" -> 1000.0
+            nums = [float(x.replace(",", "")) for x in nums]
+            table.append(nums)
+        return table
+    except Exception:
+        return False
+
+def has_comments(stu_code):
+    return '"""' in stu_code or "'''" in stu_code or "#" in stu_code
+
+def uses_format_or_fstring(stu_code):
+    return "format(" in stu_code or "f\"" in stu_code or "f'" in stu_code
+
+def grade(n_limit = None):
+    print("Running...")
+    count = 0# for testing
+    target_dir = get_submission_dir("HW2b")
+    rubric = readReturn(os.path.abspath("A2/rubrics/A2b_rubric.txt"))
+    grade_comment_template = readReturn(os.path.abspath("A2/grade_comment_template.txt"))
     for filename in sorted(os.listdir(target_dir), key=str.lower):
         filepath = os.path.join(target_dir, filename)
+        count += 1
         if filename.endswith(".py"):
-            [stu_out, stu_err] = getOutErr(filepath)
-            # print("STDOUT:", repr(stu_out))
-            # print("STDERR:", repr(stu_err))
+            mock_inputs = "1000\n0.04\n"
+            [stu_out, stu_err] = getOutErr(filepath, mock_inputs)
+            if stu_err.strip():
+                writeInComments(filename, ": Need Human Check!")
+                continue
+            table_array = extract_table_values(stu_out)
+            table_str = "\n".join([", ".join(map(str, row)) for row in table_array])
             stu_code = readReturn(os.path.abspath(filepath))
-            student_bundle = create_student_bundle(stu_code, stu_out + "\n" + stu_err, rubric, grade_comment_template)
-            student_grade_comment = chat(student_bundle)
-            writeInComments(filename, student_grade_comment.content)
+            student_bundle = uf.create_student_bundle(prompt_template, stu_code, stu_out + "\n" + stu_err + "\nTable output:" + table_str, rubric, grade_comment_template)
+            student_grade_comment = chat.invoke(student_bundle["messages"])
+            if (uses_format_or_fstring(stu_code)):
+                writeInComments(filename, student_grade_comment.content + "\nHas someways of formatting output.")
+            else:
+                writeInComments(filename, student_grade_comment.content + "\nProgram should format output using format() or f-strings.")
+        if n_limit is not None and count >= n_limit:
+            break
+    print("Program ends.")
             
 grade()

@@ -27,15 +27,6 @@ Format the grading comment according to ```{grade_comment_template}``` only."""
 
 prompt_template = ChatPromptTemplate.from_template(template_string)
 
-# consider put this in the utility_functions
-def get_submission_dir(hw_name):
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this script
-    return os.path.join(BASE_DIR, "stu_submissions", hw_name)
-
-def readReturn(filepath):
-    with open(filepath, "r", encoding="utf-8") as file:
-        return file.read()
-
 def getOutErr(filepath, mock_inputs, timeout=5):
     result = subprocess.run([sys.executable, filepath], input=mock_inputs, capture_output=True, text=True, timeout=timeout)
     return [result.stdout, result.stderr]
@@ -55,9 +46,9 @@ def uses_format_or_fstring(stu_code):
 def grade(n_limit = None):
     print("Running...")
     count = 0
-    target_dir = get_submission_dir("HW2c")
-    rubric = readReturn(os.path.abspath("A2/rubrics/A2c_rubric.txt"))
-    grade_comment_template = readReturn(os.path.abspath("A2/grade_comment_template.txt"))
+    target_dir = uf.get_submission_dir("26Fall", "HW2c")
+    rubric = uf.readReturn(os.path.abspath("A2/rubrics/A2c_rubric.txt"))
+    grade_comment_template = uf.readReturn(os.path.abspath("A2/grade_comment_template.txt"))
     for filename in sorted(os.listdir(target_dir), key=str.lower):
         filepath = os.path.join(target_dir, filename)
         count += 1
@@ -67,7 +58,7 @@ def grade(n_limit = None):
             if stu_err.strip():
                 writeInComments(filename, ": Need Human Check!")
                 continue
-            stu_code = readReturn(os.path.abspath(filepath))
+            stu_code = uf.readReturn(os.path.abspath(filepath))
             student_bundle = uf.create_student_bundle(prompt_template, stu_code, stu_out + "\n" + stu_err, rubric, grade_comment_template)
             student_grade_comment = chat.invoke(student_bundle["messages"])
             if (not has_comments(stu_code)):
