@@ -50,21 +50,21 @@ About Manually Grading:
     2. Add more maybe, if applicable.########//////
 
 Expected Directory Structure for Grading:
-autograder_intro_to_cp
-    └──semester (2*Fall/2*Spring)
-        │── A*
-        │   │── stu_submissions/
-        |   |       |
-        |   |       |── firstname_lastname_**.py
-        |   |       |
-        │   │       └── ...
-        │   │
-        │   │── rubrics/
-        │   |
-        |   |
-        │   └── A*_grader.py
-        │       
-        └── grade_comment_template
+> autograder_intro_to_cp
+>    └──semester (2*Fall/2*Spring)
+>        │── A*
+>        │   │── stu_submissions/
+>        |   |       |
+>        |   |       |── firstname_lastname_**.py
+>        |   |       |
+>        │   │       └── ...
+>        │   │
+>        │   │── rubrics/
+>        │   |
+>        |   |
+>        │   └── A*_grader.py
+>        │       
+>        └── grade_comment_template
 
 Some Notes that I don't know how to organize:
 0. resolved problems are markede with ✅.
