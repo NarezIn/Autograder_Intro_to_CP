@@ -47,7 +47,7 @@ def check_illegal_function(code_content):
 # if __name__ == "__main__":
 #     #this line means that the following code would be executed only if we run this file
 #     #following code would not be executed if this file is imported.
-#     late_submission("A3/stu_submissions/Richard_Park_3a.py")
+#     late_submission("A3/stu_submissions/___.py")
 
 # The following functions are created after introducing langchain and ChatGPT AP
 def create_student_bundle(prompt_template, stu_code, stu_out, rubric, grade_comment_template):
@@ -71,3 +71,12 @@ def get_submission_dir(semester, hw_name):
     """
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this uf
     return os.path.join(BASE_DIR, semester, "stu_submissions", hw_name)
+
+def get_sub_dir(semester, assignment_name, hw_name):
+    """
+    NEW VERSION FOR INTEGRATED GRADER:
+    Receives the name of the directory where all students submissions are,
+    and return the absolute path to that directory.
+    """
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # directory of this uf
+    return os.path.join(BASE_DIR, semester, assignment_name, "stu_submissions", hw_name)

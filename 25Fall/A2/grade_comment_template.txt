@@ -1,0 +1,12 @@
+'''Words delimited by $$ are variables that need to be replaced by an actual value.'''
+'''Don't add any delimiters in the grade_comment'''
+
+if there are deductions based on the reason on the rubric, list deducted points as bullet points, following by the reason of deduction from rubric:
+    $point_deducted$: $reason on the rubric$
+    e.g.
+    -0.2: columns not aligned perfectly as shown in examples
+if you see anything else, not explicitly listed on the rubric, from the (code / output / error) that might be deducted, report where the chunk of code is, following by the your reason of why points might be deducted there
+    report "Need Human Check!"
+    $where_the_code_is_that_causes_the_potential_deduction$: $your reason of this potential
+else (meaning no deductions):
+    no need to say how good the code is, just say Perfect.
