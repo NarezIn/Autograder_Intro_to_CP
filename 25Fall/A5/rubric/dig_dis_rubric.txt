@@ -1,0 +1,30 @@
+0. All function names in student's code does not have to be exactly the same as the name in this rubric.
+
+
+Part1:
+a. has a function named "horizontal_line" that has the following features:
+    a.1 Input: A character to print with
+    a.2 Processing: Prints a single horizontal line 5 characters wide
+    a.3 Output: Does not return anything
+b. has a function named "vertical_line" that has the following features:
+    b.1 Input: A character to print with, a shift value (integer), and a height value (integer)
+    b.2 Processing: Prints a single vertical line of the specified height
+    b.3 Output: Does not return anything
+c. has a function named "two_vertical_line" that has the following features:
+    c.1 Input: A character to print with and a height value (integer)
+    c.2 Processing: Prints two vertical lines of the specified height with 3 blank spaces in between them
+    c.3 Output: Does not return anything
+d. e.g
+
+Part2:
+e. has a function for each integer x from 0 to 9.
+    e.1 each function has the following features:
+        e.1.1 input: a character to print with
+        e.1.2 processing: prints the number x as it would appear on a digital display using the input character
+        e.1.3 output: returns nothing
+        e.1.4 better calls functions written in Part1. 
+            e.1.4.1 If stu_code does not, flag this student's submission with a comment: function_name: this function does not use any function in Part1!
+f. has a functon for the '+' and '-' operators:
+    f.1
+
+    You were heree!!!!!!!
