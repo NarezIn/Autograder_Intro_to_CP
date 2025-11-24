@@ -1,5 +1,5 @@
-from A5_digdis_grader import digdis_grader
-from A5_part5_grader import part5_grader
+from A6a_grader import A6a_grader
+from A6b_grader import A6b_grader
 import re
 
 def extract_student_id(filename: str) -> str:
@@ -7,7 +7,7 @@ def extract_student_id(filename: str) -> str:
     Extracts the student identifier prefix from filenames like 'ni2a.py', 'simon2b.py', etc.
     You can adjust this logic if your filenames differ.
     """
-    match = re.match(r"(.+?)5[a-c]\.py$", filename, re.IGNORECASE)
+    match = re.match(r"(.+?)6[a-b]\.py$", filename, re.IGNORECASE)
     return match.group(1) if match else filename  # fallback to full name if pattern fails
 
 def write_combined_comments(combined_dict, output_path="mapped_grade_comments.txt"):
@@ -18,7 +18,7 @@ def write_combined_comments(combined_dict, output_path="mapped_grade_comments.tx
                 f.write(f"[{part}]\n{comment}\n\n")
 
 def main():
-    graders = [("digdis", digdis_grader()), ("part5", part5_grader())]
+    graders = [("6a", A6a_grader()), ("6b", A6b_grader())]
     all_results = {}
 
     for label, grader_func in graders:
@@ -31,7 +31,7 @@ def main():
             all_results[student_id][label] = comment
 
     write_combined_comments(all_results)
-    print("Grading completed!")
+    print("✅ Combined grading completed!")
 
 
 if __name__ == "__main__":
