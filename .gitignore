@@ -3,7 +3,7 @@
 #ignore 'notes': which is my playgrounld folder for testing things
 **/notes/
 #ignore any folder in student_submissions: can't upload students' code to github lol.
-/*/A*/stu_submissions/*/
+/*/A*/stu_submissions/*/**
 #do the same for rubrics
 /*/A*/rubrics/*
 /*/mapped_grade_comments.txt
